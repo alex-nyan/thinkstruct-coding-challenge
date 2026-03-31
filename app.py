@@ -15,10 +15,6 @@ import json, os, time
 from flask import Flask, render_template_string, request, jsonify, session
 from patent_engine import create_engine, PatentSearchEngine
 
-# ---------------------------------------------------------------------------
-# App setup
-# ---------------------------------------------------------------------------
-
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
@@ -26,9 +22,6 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "data", "patent_data_small")
 engine: PatentSearchEngine = create_engine(DATA_DIR)
 stats = engine.stats()
 
-# ---------------------------------------------------------------------------
-# HTML Template (single-file, production-grade UI)
-# ---------------------------------------------------------------------------
 
 HTML_TEMPLATE = r"""
 <!DOCTYPE html>

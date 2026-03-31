@@ -25,9 +25,6 @@ from typing import List, Dict, Tuple
 from patent_engine import PatentSearchEngine, Patent, SearchResult
 
 
-# ---------------------------------------------------------------------------
-# Pair generation
-# ---------------------------------------------------------------------------
 
 def generate_positive_pairs(engine: PatentSearchEngine,
                             strategy: str = "claim_to_patent",
@@ -141,9 +138,6 @@ def generate_negative_pairs(engine: PatentSearchEngine,
     return pairs[:max_pairs]
 
 
-# ---------------------------------------------------------------------------
-# Evaluation metrics
-# ---------------------------------------------------------------------------
 
 def evaluate_retrieval(
     engine: PatentSearchEngine,
@@ -232,9 +226,6 @@ def evaluate_retrieval(
     return metrics
 
 
-# ---------------------------------------------------------------------------
-# Full evaluation suite
-# ---------------------------------------------------------------------------
 
 def run_full_evaluation(engine: PatentSearchEngine) -> Dict:
     """Run a comprehensive evaluation across multiple strategies and methods."""
