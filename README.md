@@ -1,12 +1,11 @@
-# PatentLens — Intelligent Patent Search Engine
 
-A search engine for patent claims, abstracts, and detailed descriptions built for the ThinkStruct backend coding challenge. Supports semantic search (TF-IDF cosine + BM25 fusion), hybrid filtering (classification codes, keywords, title), an evaluation pipeline, and a browser-based interface.
+# AI use and my idea
+
+I used Claude Opus 4.6 as my main AI agent to figure out the solutions. I then looked up the semantic searches such as TF-IDF, BM25 and tried to come up with the best solution possible. Given 2 hour constraint, I was able to implement 3 features (training & evaluation, hybrid searching and users & interface).
+# thinkstruct-coding-challenge
 
 ---
 
-## Problem Statement
-
-Patent searching requires quickly finding relevant claims, descriptions, and prior art across a growing corpus of filings. This project builds a **dual-level search engine** that operates at both the **patent level** (title + abstract + description) and the **claim level** (individual claims), enabling:
 
 - Natural language queries to find relevant patents
 - Claim-to-claim mapping for overlap and similarity analysis
@@ -140,7 +139,3 @@ For a 2-hour project with 40 patents, TF-IDF is pragmatic and highly effective (
 **Hybrid search efficiency:**  
 Filtering adds <1ms overhead because we filter the *sorted* score list rather than recomputing scores for the filtered subset. At scale (10^7 patents), the approach would shift to pre-filtering with inverted indices on classification/keywords, then scoring only the reduced candidate set — reducing computation by orders of magnitude.
 
-## On Using GenAI
-
-This project was built with AI assistance as encouraged in the project guidelines. The critical thinking — choosing dual-level indexing, rank fusion strategy, evaluation pair generation strategies, and hybrid search architecture — reflects deliberate design decisions about the patent search domain.
-# thinkstruct-coding-challenge
